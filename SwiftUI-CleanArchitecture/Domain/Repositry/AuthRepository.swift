@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Domain層　UseCase　Repository(Protocol)　Entity
 protocol AuthRepositoryInterface {
     func signUp(requestModel: AuthRequestModel) async -> AuthResponseTypeEntity
     func signIn(requestModel: AuthRequestModel) async -> AuthResponseTypeEntity
@@ -22,6 +23,7 @@ final class AuthRepository: AuthRepositoryInterface {
     }
     
     func signUp(requestModel: AuthRequestModel) async -> AuthResponseTypeEntity {
+        // DataStore 実際のデータの保存や取得する処理を記述する。FirebaseやAPIへのリクエストを投げたりする。
         let response = await authDataStore.signUp(requestModel: requestModel)
         return response
     }
@@ -30,7 +32,7 @@ final class AuthRepository: AuthRepositoryInterface {
         let response = await authDataStore.signIn(requestModel: requestModel)
         return response
     }
-    
+    // サインアウト
     func signOut() async throws {
         do {
             try await authDataStore.signOut()

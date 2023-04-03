@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Presentation層　ViewModel　ViewController　View
 final class AuthController {
     private let authSignUpUseCase: AuthSignUpUseCaseInput
     private let authSignInUseCase: AuthSignInUseCaseInput
@@ -27,6 +28,7 @@ final class AuthController {
     
     func signUp(email: String, password: String) {
         let model = AuthRequestModel(email: email, password: password)
+        // UseCase ビジネスロジックを処理する。UIやフレームワークなどの外部の変更の影響を受けることはない。
         Task {
             await authSignUpUseCase.signUp(requestModel: model)
         }
@@ -38,7 +40,7 @@ final class AuthController {
             await authSignInUseCase.signIn(requestModel: model)
         }
     }
-    
+    // サインアウト
     func signOut() {
         Task {
             try await authSignOutuseCase.signOut()

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// プロフィール登録画面
 struct UserProfileView: View {
     @ObservedObject var userProfileVM: UserProfileViewModel
     @ObservedObject var authSignOutVM: AuthSignOutViewModel
@@ -154,7 +155,7 @@ extension UserProfileView {
         fetchButtonEnabled = userProfileVM.isUserDataSaved
         deleteButtonEnabled = userProfileVM.isUserDataSaved
     }
-    
+    // サインアウト
     private func signOut() {
         authController.signOut()
     }

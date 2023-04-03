@@ -24,7 +24,7 @@ final class AuthSignOutUseCase: AuthSignOutUseCaseInput {
         self.authRepository = authRepository
         self.output = output
     }
-    
+    // サインアウト
     func signOut() async throws {
         do {
             try await authRepository.signOut()

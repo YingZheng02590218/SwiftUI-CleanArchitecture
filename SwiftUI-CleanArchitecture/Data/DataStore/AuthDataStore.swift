@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Data層　Repositorylmpl　DataStore　Entity
 protocol AuthDataStoreInterface {
     func signUp(requestModel: AuthRequestModel) async -> AuthResponseTypeEntity
     func signIn(requestModel: AuthRequestModel) async -> AuthResponseTypeEntity
@@ -16,7 +17,7 @@ protocol AuthDataStoreInterface {
 
 final class AuthDataStore: AuthDataStoreInterface {
     private let authRequest = AuthRequestToFirebase()
-    
+    // サインアップ
     func signUp(requestModel: AuthRequestModel) async -> AuthResponseTypeEntity {
         let request = AuthRequestEntity(email: requestModel.email, password: requestModel.password)
         let response = await authRequest.signUp(requestEntity: request)
@@ -28,7 +29,7 @@ final class AuthDataStore: AuthDataStoreInterface {
         let response = await authRequest.signIn(requestEntity: request)
         return response
     }
-    
+    // サインアウト
     func signOut() async throws {
         do {
             try await authRequest.signout()

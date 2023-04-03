@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Presentation層　ViewModel　ViewController　View
 final class AuthSignUpPresenter: AuthSignUpUseCaseOutput {
     let authSignUpVM: AuthSignUpViewModel
     
@@ -15,6 +16,7 @@ final class AuthSignUpPresenter: AuthSignUpUseCaseOutput {
     }
     
     func successSignUp() {
+        // ViewModel Presenterから受けとったデータやステータスによってViewの表示を切り替えます。
         authSignUpVM.isShowSuccessSignUpAlert = true
     }
     

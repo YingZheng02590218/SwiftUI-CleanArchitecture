@@ -18,8 +18,10 @@ struct SwiftUI_CleanArchitectureApp: App {
             case .signIn:
                 AuthSignInBuilder.shared.build()
             case .signUp:
+                // サインアップ
                 AuthSignUpBuilder.shared.build()
             case .profile:
+                // プロフィール登録画面
                 UserProfileBuilder.shared.build()
             }
         }

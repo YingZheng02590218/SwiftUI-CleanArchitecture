@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Data層　Repositorylmpl　DataStore　Entity
 struct AuthRequestEntity {
     var email: String
     var password: String

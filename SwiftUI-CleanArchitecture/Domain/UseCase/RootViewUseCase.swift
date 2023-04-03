@@ -36,7 +36,7 @@ final class RootViewUseCase: RootViewUseCaseInput {
     func successSignIn() {
         output.changeProfileView()
     }
-    
+    // サインアウト
     func successSignOut() {
         output.changeSignInView()
     }

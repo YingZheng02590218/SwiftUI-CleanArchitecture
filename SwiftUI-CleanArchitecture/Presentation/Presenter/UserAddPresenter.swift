@@ -15,6 +15,7 @@ final class UserAddPresenter: UserAddUseCaseOutput {
     }
     
     func invalidUserName() {
+        // TODO: Publishing changes from background threads is not allowed; make sure to publish values from the main thread (via operators like receive(on:)) on model updates.
         userProfileVM.isShowUserNameAlert = true
     }
     

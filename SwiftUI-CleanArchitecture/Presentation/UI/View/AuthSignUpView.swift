@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Presentation層　ViewModel　ViewController　View
 struct AuthSignUpView: View {
     @ObservedObject var authSignUpVM: AuthSignUpViewModel
     @State private var email = ""
@@ -46,6 +47,7 @@ struct AuthSignUpView: View {
                 }
                 .padding(.top, 20)
                 ButtonView(text: "サインアップ", textColor: .white, color: .black, buttonEnabled: true) {
+                    // View 画面の表示とユーザーからのアクションをControllerに通知します。
                     onTapSignUpButton(email: email, password: password)
                 }
                 .padding(.top, 20)
@@ -108,6 +110,7 @@ extension AuthSignUpView {
     }
     
     private func onTapSignUpButton(email: String, password: String) {
+        // Controller Viewからイベントを受け取ってイベントに応じたUseCaseを実行します。また、UseCaseで使うModel型に値を変換する役割も担当します。
         authController.signUp(email: email, password: password)
     }
 }

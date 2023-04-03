@@ -13,7 +13,7 @@ final class AuthSignOutPresenter: AuthSignOutUseCaseOutput {
     init(authSignOutVM: AuthSignOutViewModel) {
         self.authSignOutVM = authSignOutVM
     }
-    
+    // サインアウト
     func successSignOut() {
         authSignOutVM.isShowSuccessSignOutAlert = true
     }

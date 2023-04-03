@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Presentation層　ViewModel　ViewController　View
 final class AuthSignUpViewModel: ObservableObject {
     @Published var isShowSuccessSignUpAlert = false
     @Published var isShowFailInvalidEmailAlert = false

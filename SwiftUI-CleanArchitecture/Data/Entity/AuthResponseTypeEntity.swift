@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Data層　Repositorylmpl　DataStore　Entity
 enum AuthResponseTypeEntity {
     case success
     case invalidEmail
