@@ -1,0 +1,6 @@
+framework module Pods_SwiftUI_CleanArchitectureTests {
+  umbrella header "Pods-SwiftUI-CleanArchitectureTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
